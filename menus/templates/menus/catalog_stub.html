@@ -1,0 +1,15 @@
+{# menus/templates/menus/catalog_stub.html #}
+{% load menu_tags %} {# или как у вас называется файл тегов #}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Каталог</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'menus/css/menu.css' %}">
+</head>
+<body>
+    {# Единственное, что отрисовываем — меню #}
+    {% draw_menu 'main_menu' %}
+</body>
+</html>

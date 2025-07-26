@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo Tree Menu</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'menus/css/menu.css' %}" />
+  </head>
+  <body>
+    {# один запрос сразу на оба меню #}
+    {% menu_prefetch 'main_menu' 'footer_menu' %}
+
+    {# далее рендер без доп. SQL #}
+    {% draw_menu 'main_menu' %}
+    <hr />
+    {% draw_menu 'footer_menu' %}
+
+    <hr />
+    <h1>Страница: {{ request.path }}</h1>
+  </body>
+</html>

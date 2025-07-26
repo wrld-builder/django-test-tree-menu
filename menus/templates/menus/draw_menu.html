@@ -1,0 +1,4 @@
+{# file: menus/templates/menus/draw_menu.html #}
+<ul class="menu menu-{{ menu_slug }}">
+  {% include "menus/partials/node.html" with nodes=nodes only %}
+</ul>

@@ -1,0 +1,38 @@
+# file: .gitignore
+# Python кэш/артефакты
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.pkl
+
+# Виртуальные окружения
+.venv/
+env/
+venv/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.mo
+db.sqlite3
+media/
+staticfiles/
+*.sqlite3
+
+# IDE/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker/PID
+*.pid
+*.pid.lock
+
+# Кэши миграций
+*/__pycache__/

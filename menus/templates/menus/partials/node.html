@@ -1,0 +1,11 @@
+{# file: menus/templates/menus/partials/node.html #}
+{% for node in nodes %}
+  <li class="{% if node.is_active %}active{% endif %}{% if node.is_ancestor %} ancestor{% endif %}">
+    <a href="{{ node.url|default:'#' }}">{{ node.item.title }}</a>
+    {% if node.children and node.expanded %}
+      <ul>
+        {% include "menus/partials/node.html" with nodes=node.children only %}
+      </ul>
+    {% endif %}
+  </li>
+{% endfor %}
