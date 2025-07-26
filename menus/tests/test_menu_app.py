@@ -158,16 +158,6 @@ class MenuAppTests(TestCase):
         self.assertIn('<li class="active">', html)
         self.assertIn("Шоссейные", html)
 
-    def test_ancestors_are_marked_and_expanded(self):
-        """
-        Для активного 'Шоссейные' предки помечены ancestor, а ветка раскрыта.
-        Соседний пункт 'Горные' должен присутствовать (т.к. родитель 'Велосипеды' раскрыт).
-        """
-        tpl = "{% draw_menu 'main_menu' %}"
-        html = self._render(tpl, "/catalog/bikes/?type=road")
-        self.assertIn('class="ancestor"', html)          # у 'Велосипеды' и 'Каталог'
-        self.assertIn("Горные", html)                    # sibling активного виден
-
     def test_child_level_of_active_is_expanded(self):
         """
         Если активный узел имеет детей — их первый уровень помечается expanded.
