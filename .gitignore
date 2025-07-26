@@ -36,3 +36,5 @@ Thumbs.db
 
 # Кэши миграций
 */__pycache__/
+
+*.env
