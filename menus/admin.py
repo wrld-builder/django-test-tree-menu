@@ -63,7 +63,7 @@ class MenuAdmin(admin.ModelAdmin):
     list_display = ("title", "slug")
     search_fields = ("title", "slug")
     prepopulated_fields = {"slug": ("title",)}
-    inlines = [MenuItemInline]  # <— теперь пункты редактируются прямо в меню
+    inlines = [MenuItemInline]
 
 
 @admin.register(MenuItem)
